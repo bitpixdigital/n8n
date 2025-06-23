@@ -1,0 +1,28 @@
+# Exported from Render on 2025-06-23T16:20:46Z
+services:
+- type: web
+  name: n8n
+  runtime: image
+  image:
+    url: docker.n8n.io/n8nio/n8n:latest
+  plan: standard
+  envVars:
+  - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+    sync: false
+  - key: N8N_PORT
+    sync: false
+  - key: N8N_PROTOCOL
+    sync: false
+  - key: N8N_EDITOR_BASE_URL
+    sync: false
+  - key: N8N_HOST
+    sync: false
+  - key: N8N_USER_FOLDER
+    sync: false
+  region: oregon
+  disk:
+    name: disk
+    mountPath: /opt/render/.n8n
+    sizeGB: 1
+  autoDeployTrigger: commit
+version: "1"
